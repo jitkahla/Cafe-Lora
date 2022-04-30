@@ -44,7 +44,7 @@ const romano = {
   image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
 };*/
 
-const drinks = [
+/*const drinks = [
   {
     id: 'cappuccino',
     name: 'Cappuccino',
@@ -82,7 +82,15 @@ const drinks = [
     image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
   },
 ];
+*/
 
-drinks.forEach((drink) =>
-  document.querySelector('.drinks-list').appendChild(Drink(drink)),
-);
+fetch('https://apps.kodim.cz/daweb/cafelora/api/drinks')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    const drinks = data.results;
+    drinks.forEach((drink) =>
+      document.querySelector('.drinks-list').appendChild(Drink(drink)),
+    );
+  });
