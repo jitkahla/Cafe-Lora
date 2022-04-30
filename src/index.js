@@ -35,9 +35,12 @@ orderBtn.addEventListener('click', () => {
 });
 
 //zapojení komponenty Layer
-const foam = { color: '#feeeca', label: 'mléčná pěna' };
-const milk = { color: '#fed7b0', label: 'teplé mléko' };
-const coffee = { color: '#613916', label: 'espresso' };
+const layers = [
+  { color: '#feeeca', label: 'mléčná pěna' },
+  { color: '#fed7b0', label: 'teplé mléko' },
+  { color: '#613916', label: 'espresso' },
+];
 
-document.querySelector('.drink__info').innerHTML =
-  Layer(foam) + Layer(milk) + Layer(coffee);
+layers.forEach(
+  (item) => (document.querySelector('.drink__info').innerHTML += Layer(item)),
+);
