@@ -1,5 +1,5 @@
 import './style.css';
-import { Layer } from './Layer/index.js';
+import { Drink } from './Drink/index.js';
 
 console.log('funguju!');
 
@@ -17,11 +17,11 @@ navItems.forEach((navItem) =>
 );
 
 //objednávací tlačítko
-let ordered = false;
+/* let ordered = false;
 
 const orderBtn = document.querySelector('.order-btn');
 orderBtn.addEventListener('click', () => {
-  if (ordered === false) {
+  if (!ordered) {
     orderBtn.textContent = 'Zrušit';
     document.querySelector('.drink__cup').classList.add('drink__cup--selected');
     ordered = true;
@@ -32,7 +32,7 @@ orderBtn.addEventListener('click', () => {
       .classList.remove('drink__cup--selected');
     ordered = false;
   }
-});
+}); */
 
 //zapojení komponenty Layer
 const layers = [
@@ -41,6 +41,24 @@ const layers = [
   { color: '#613916', label: 'espresso' },
 ];
 
-layers.forEach(
+/* layers.forEach(
   (item) => (document.querySelector('.drink__info').innerHTML += Layer(item)),
-);
+); */
+const romano = {
+  id: 'romano',
+  name: 'Romano',
+  ordered: false,
+  layers: [
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ],
+  image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
+};
+
+document.querySelector('.drinks-list').appendChild(Drink(romano));
