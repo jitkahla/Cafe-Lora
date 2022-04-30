@@ -1,4 +1,5 @@
 import './style.css';
+import { Layer } from './Layer/index.js';
 
 console.log('funguju!');
 
@@ -32,3 +33,11 @@ orderBtn.addEventListener('click', () => {
     ordered = false;
   }
 });
+
+//zapojení komponenty Layer
+const foam = { color: '#feeeca', label: 'mléčná pěna' };
+const milk = { color: '#fed7b0', label: 'teplé mléko' };
+const coffee = { color: '#613916', label: 'espresso' };
+
+document.querySelector('.drink__info').innerHTML =
+  Layer(foam) + Layer(milk) + Layer(coffee);
