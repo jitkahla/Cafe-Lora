@@ -261,6 +261,10 @@ nav a:hover {
   height: auto;
 }
 
+.blur {
+  backdrop-filter: blur(10px);
+  text-shadow: 1px 1px 10px black;
+}
 @media (min-width: 576px) {
   .drink {
     width: 50%;
