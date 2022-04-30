@@ -2,7 +2,7 @@ import './style.css';
 import { Layer } from '../Layer/index.js';
 
 export const Drink = (props) => {
-  const { name, layers, image } = props;
+  let { name, layers, image, ordered } = props;
 
   const drinkDiv = document.createElement('div');
   drinkDiv.classList.add('drink');
@@ -23,5 +23,25 @@ export const Drink = (props) => {
   layers.forEach(
     (item) => (drinkDiv.querySelector('.drink__info').innerHTML += Layer(item)),
   );
+
+  //objednávací tlačítko
+
+  const orderBtn = drinkDiv.querySelector('.order-btn');
+  orderBtn.addEventListener('click', () => {
+    if (!ordered) {
+      orderBtn.textContent = 'Zrušit';
+      drinkDiv
+        .querySelector('.drink__cup')
+        .classList.add('drink__cup--selected');
+      ordered = true;
+    } else {
+      orderBtn.textContent = 'Objednat';
+      drinkDiv
+        .querySelector('.drink__cup')
+        .classList.remove('drink__cup--selected');
+      ordered = false;
+    }
+  });
+
   return drinkDiv;
 };

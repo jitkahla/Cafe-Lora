@@ -16,24 +16,6 @@ navItems.forEach((navItem) =>
   }),
 );
 
-//objednávací tlačítko
-/* let ordered = false;
-
-const orderBtn = document.querySelector('.order-btn');
-orderBtn.addEventListener('click', () => {
-  if (!ordered) {
-    orderBtn.textContent = 'Zrušit';
-    document.querySelector('.drink__cup').classList.add('drink__cup--selected');
-    ordered = true;
-  } else {
-    orderBtn.textContent = 'Objednat';
-    document
-      .querySelector('.drink__cup')
-      .classList.remove('drink__cup--selected');
-    ordered = false;
-  }
-}); */
-
 //zapojení komponenty Layer
 const layers = [
   { color: '#feeeca', label: 'mléčná pěna' },
